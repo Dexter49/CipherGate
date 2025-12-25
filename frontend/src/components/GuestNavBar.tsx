@@ -33,8 +33,8 @@ export default function GuestNavBar() {
   };
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-gray-200 bg-[#FAFBFD] px-5 py-4 shadow-sm">
-      <div className="mx-auto flex max-w-8xl items-center justify-between px-4 sm:px-6 lg:px-8">
+    <nav className="sticky top-0 z-50 w-full border-b border-gray-200 bg-[#FAFBFD] px-4 py-4 shadow-sm">
+      <div className="mx-auto flex max-w-9xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Cipher Logo Section */}
         <div className="flex">
           <button
@@ -42,9 +42,9 @@ export default function GuestNavBar() {
             className="flex items-center"
           >
             <Image
-              src="/logos/Cipher Gate - Light.png"
+              src="/logos/Cipher Gate - Light.svg"
               alt="CipherGate Logo"
-              width={220}
+              width={230}
               height={10}
               className="h-auto"
               priority

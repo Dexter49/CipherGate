@@ -2,6 +2,7 @@
 "use client";
 
 import GuestNavBar from "@/components/GuestNavBar";
+import Footer from "@/components/Footer";
 import { Sora } from "next/font/google";
 import { DM_Sans } from "next/font/google";
 
@@ -576,10 +577,10 @@ export default function LandingPage() {
         </section>
       </main>
 
-      {/* Footer */}
-      <footer className="mt-20 border-t border-gray-200 py-8 text-center text-gray-500">
-        <p>CipherGate • Built by Dexter with ❤️ for a private future.</p>
-      </footer>
+      {/* Replace the old footer with the new Footer component */}
+      <Footer scrollToSection={function (id: string): void {
+        throw new Error("Function not implemented.");
+      } } />
     </div>
   );
 }
