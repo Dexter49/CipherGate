@@ -3,6 +3,9 @@
 
 import GuestNavBar from "@/components/GuestNavBar";
 import Footer from "@/components/Footer";
+import ConnectWallet from "@/components/ConnectWallet";
+import { useConnectWalletModal } from "@/hooks/ConnectWalletModal";
+
 import { Sora } from "next/font/google";
 import { DM_Sans } from "next/font/google";
 
@@ -13,7 +16,6 @@ const sora = Sora({
   variable: "--font-sora",
 });
 
-
 // Load DM Sans font
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -22,11 +24,14 @@ const dmSans = DM_Sans({
 });
 
 export default function LandingPage() {
+  const { isConnectWalletOpen, openConnectWallet, closeConnectWallet } =
+    useConnectWalletModal();
+
   return (
     <div
       className={`min-h-screen bg-linear-to-br from-gray-50 to-white ${dmSans.variable} font-sans`}
     >
-      <GuestNavBar />
+      <GuestNavBar onConnectWallet={openConnectWallet} />
 
       <main className="mx-auto max-w-7xl px-6 py-20 sm:px-8">
         {/* Hero Section */}
@@ -51,6 +56,7 @@ export default function LandingPage() {
 
           <div className="flex flex-col md:flex-row justify-center gap-6">
             <button
+              onClick={openConnectWallet} // ConnectWallet Handler
               className="px-8 py-4 bg-linear-to-r from-[#0768EB] to-[#08C4CE] hover:from-[#034BB5] hover:to-[#05949E] rounded-xl font-sora text-[20px] font-semibold text-[#FEFEFE] shadow-lg transition-all hover:shadow-xl"
               style={{
                 fontFamily: "Sora, sans-serif",
@@ -578,9 +584,14 @@ export default function LandingPage() {
       </main>
 
       {/* Replace the old footer with the new Footer component */}
-      <Footer scrollToSection={function (id: string): void {
-        throw new Error("Function not implemented.");
-      } } />
+      {/* <Footer
+        scrollToSection={function (id: string): void {
+          throw new Error("Function not implemented.");
+        }}
+      /> */}
+
+      {/* ConnectWallet Modal */}
+      <ConnectWallet isOpen={isConnectWalletOpen} onClose={closeConnectWallet} />
     </div>
   );
 }

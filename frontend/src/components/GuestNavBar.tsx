@@ -22,7 +22,11 @@ const dmSans = DM_Sans({
   variable: "--font-dm-sans",
 });
 
-export default function GuestNavBar() {
+interface GuestNavBarProps {
+  onConnectWallet?: () => void;
+}
+
+export default function GuestNavBar({ onConnectWallet }: GuestNavBarProps) {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   const scrollToSection = (id: string) => {
@@ -100,7 +104,7 @@ export default function GuestNavBar() {
           {/* Divider Line */}
           <div className="hidden h-10 w-px bg-[#E1E4ED] mr-[30px] md:block"></div>
           <button
-            onClick={() => scrollToSection("faqs")}
+            onClick={onConnectWallet} // ConnectWallet Handler
             className="font-dm-sans text-[20px] font-normal underline text-[#263453] transition-colors hover:text-blue-600"
             style={{ fontFamily: "DM Sans, sans-serif" }}
           >
@@ -110,6 +114,7 @@ export default function GuestNavBar() {
           <div className="w-[30px]"></div>
 
           <button
+            onClick={onConnectWallet} // ConnectWallet Handler
             className="flex items-center justify-center rounded-full px-5 py-2.5 shadow-[1px_1px_1px_rgba(11,13,23,0.2)] transition-all hover:shadow-[2px_2px_2px_rgba(11,13,23,0.3)]"
             style={{
               background: "linear-gradient(135deg, #0768EB 0%, #08C4CE 100%)",
