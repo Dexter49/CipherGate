@@ -584,11 +584,7 @@ export default function LandingPage() {
       </main>
 
       {/* Replace the old footer with the new Footer component */}
-      {/* <Footer
-        scrollToSection={function (id: string): void {
-          throw new Error("Function not implemented.");
-        }}
-      /> */}
+      <Footer />
 
       {/* ConnectWallet Modal */}
       <ConnectWallet isOpen={isConnectWalletOpen} onClose={closeConnectWallet} />
