@@ -1,0 +1,27 @@
+{
+  "name": "ciphergate",
+  "version": "1.0.0",
+  "description": "**Encrypted Conditional Access & Secret Logic Engine (FHEVM Demo App)**",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dexter49/CipherGate.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Dexter49/CipherGate/issues"
+  },
+  "homepage": "https://github.com/Dexter49/CipherGate#readme",
+  "dependencies": {
+    "@fhevm/solidity": "^0.10.0"
+  }
+}
